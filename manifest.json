@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "Domain Expiry Checker",
     "version": "1.0",
-    "description": "Instantly check domain expiry date and days remaining.",
+    "description": "Instantly check domain and SSL certificate expiry dates and days remaining.",
     "permissions": [
         "activeTab"
     ],

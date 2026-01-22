@@ -1,6 +1,6 @@
 # Domain Expiry Checker 🌐
 
-A beautiful, fast, and privacy-focused browser extension that instantly checks domain expiry dates. Designed for developers and site managers who need quick answers without navigating to third-party WHOIS websites.
+A beautiful, fast, and privacy-focused browser extension that instantly checks domain and SSL certificate expiry dates. Designed for developers and site managers who need quick answers without navigating to third-party websites.
 
 ![Extension Preview](https://via.placeholder.com/800x400?text=Premium+Dark+UI+Preview)
 
@@ -12,7 +12,8 @@ A beautiful, fast, and privacy-focused browser extension that instantly checks d
     *   🟢 **Safe**: > 60 days remaining
     *   🟡 **Warning**: < 60 days remaining
     *   🔴 **Urgent**: < 30 days remaining
-*   **🔒 Privacy First**: No tracking, no analytics, no signups. Queries are sent directly via RDAP.
+*   **🔒 SSL Monitoring**: Checks SSL certificate validity and expiration date alongside domain expiry.
+*   **🛡️ Privacy First**: No tracking, no analytics, no signups. Queries are sent directly via RDAP.
 *   **⌨️ Manual Check**: Easily type in any domain to check it without visiting the site.
 
 ## 🚀 Installation
@@ -32,13 +33,14 @@ Since this is a developer tool, you can install it as an unpacked extension:
 
 1.  **Browse**: Visit any website you want to check.
 2.  **Click**: Hit the extension icon.
-3.  **View**: Instantly see the expiry date and days remaining.
+3.  **View**: Instantly see the expiry date and days remaining for both Domain and SSL.
 4.  **Manual**: Type a different domain in the input box and press Enter or the Search icon.
 
 ## 🧩 Technical Details
 
 *   **Manifest V3**: Compliant with the latest browser extension standards.
-*   **RDAP Protocol**: Uses the Registration Data Access Protocol (modern replacement for WHOIS) to fetch data in JSON format.
+*   **RDAP Protocol**: Uses the Registration Data Access Protocol (modern replacement for WHOIS) to fetch domain data.
+*   **SSL API**: Uses NetworkCalc API to retrieve SSL certificate details.
 *   **Vanilla JS/CSS**: Extremely lightweight with no external dependencies or frameworks.
 
 ## 🛡️ Privacy Policy
@@ -46,7 +48,7 @@ Since this is a developer tool, you can install it as an unpacked extension:
 This extension respects your privacy:
 *   **No Data Collection**: We do not store, track, or sell your data.
 *   **No Accounts**: No sign-up required.
-*   **Direct Connections**: Requests are made directly from your browser to `rdap.org` (a redirect service to the official registries).
+*   **Direct Connections**: Requests are made directly from your browser to `rdap.org` (domain lookup) and `networkcalc.com` (SSL lookup).
 
 ---
 
