@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domain Expiry</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Domain Expiry</h1>
+        </header>
+        <main>
+            <div class="input-group">
+                <input type="text" id="domainInput" placeholder="example.com" autocomplete="off" spellcheck="false">
+                <button id="checkBtn" title="Check Domain">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <div id="loading" class="hidden">
+                <div class="spinner"></div>
+            </div>
+
+            <div id="result" class="hidden fade-in">
+                <div id="statusIndicator" class="status-indicator"></div>
+                <div class="days-container">
+                    <h2 id="daysLeft">--</h2>
+                    <span class="days-label">Days Left</span>
+                </div>
+                <div class="date-container">
+                    <span class="label">Expires on</span>
+                    <span id="expiryDate" class="value">--</span>
+                </div>
+            </div>
+
+            <div id="error" class="hidden fade-in">
+                <div class="error-icon">!</div>
+                <p id="errorMsg">Something went wrong</p>
+            </div>
+
+
+        </main>
+        <footer>
+            <p>Data via RDAP</p>
+        </footer>
+    </div>
+    <script src="popup.js"></script>
+</body>
+
+</html>
