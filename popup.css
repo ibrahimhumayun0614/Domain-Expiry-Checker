@@ -147,6 +147,22 @@ button:hover {
     margin-top: 0.5rem;
 }
 
+.need-to-know-link {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.need-to-know-link a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.need-to-know-link a:hover {
+    text-decoration: underline;
+}
+
 .label {
     font-size: 0.825rem;
     color: var(--text-secondary);

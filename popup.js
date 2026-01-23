@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const daysLeftEl = document.getElementById('daysLeft');
     const expiryDateEl = document.getElementById('expiryDate');
     const statusIndicator = document.getElementById('statusIndicator');
+    const needToKnowWhy = document.getElementById('needToKnowWhy');
 
     const manualCheckDiv = document.getElementById('manualCheck');
     const whoisLink = document.getElementById('whoisLink');
@@ -51,6 +52,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         resultDiv.classList.add('hidden');
         errorDiv.classList.add('hidden');
         loadingDiv.classList.remove('hidden');
+        if (needToKnowWhy) needToKnowWhy.classList.add('hidden');
 
         // Clean domain
         domain = domain.replace(/^(https?:\/\/)?(www\.)?/, '').split('/')[0];
@@ -198,6 +200,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             // Set main status based on domain (priority)
             resultDiv.classList.remove('status-safe', 'status-warning', 'status-urgent');
+
+            // Ensure link is hidden
+            if (needToKnowWhy) needToKnowWhy.classList.add('hidden');
+
             if (diffDays > 60) {
                 resultDiv.classList.add('status-safe');
                 statusIndicator.style.backgroundColor = 'var(--success)';
@@ -211,6 +217,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         } else {
             domainEl.textContent = 'N/A';
             domainDateEl.textContent = 'Not Found';
+
+            // Show link
+            if (needToKnowWhy) needToKnowWhy.classList.remove('hidden');
+
             resultDiv.classList.add('status-warning'); // Default to warning if unknown
             statusIndicator.style.backgroundColor = 'var(--warning)';
         }
