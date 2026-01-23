@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "Domain Expiry Checker",
+    "name": "Domain and SSL Expiry Checker",
     "version": "1.0",
     "description": "Instantly check domain and SSL certificate expiry dates and days remaining.",
     "permissions": [
@@ -11,6 +11,16 @@
     ],
     "action": {
         "default_popup": "popup.html",
-        "default_title": "Check Domain Expiry"
+        "default_title": "Check Domain Expiry",
+        "default_icon": {
+            "16": "icons/Domain and SSL Expiry Checker 16x16.png",
+            "48": "icons/Domain and SSL Expiry Checker 48x48.png",
+            "128": "icons/Domain and SSL Expiry Checker 128x128.png"
+        }
+    },
+    "icons": {
+        "16": "icons/Domain and SSL Expiry Checker 16x16.png",
+        "48": "icons/Domain and SSL Expiry Checker 48x48.png",
+        "128": "icons/Domain and SSL Expiry Checker 128x128.png"
     }
 }

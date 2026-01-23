@@ -38,17 +38,30 @@ Since this is a developer tool, you can install it as an unpacked extension:
 
 ## 🧩 Technical Details
 
-*   **Manifest V3**: Compliant with the latest browser extension standards.
-*   **RDAP Protocol**: Uses the Registration Data Access Protocol (modern replacement for WHOIS) to fetch domain data.
-*   **SSL API**: Uses NetworkCalc API to retrieve SSL certificate details.
-*   **Vanilla JS/CSS**: Extremely lightweight with no external dependencies or frameworks.
+*   **Manifest V3**: Compliant with the latest browser extension standards for security and performance.
+*   **Vanilla JS/CSS**: Extremely lightweight with no external dependencies or large frameworks, ensuring distinctively fast load times.
+
+## 🔍 How It Works & Data Sources
+
+We believe in transparency. Here is exactly how we retrieve the data without compromising your privacy:
+
+### 1. Domain Expiry (RDAP)
+Instead of using the legacy and unstructured WHOIS protocol, we utilize **RDAP (Registration Data Access Protocol)**.
+*   **Source**: We query `https://rdap.org/domain/{your-domain}`.
+*   **Methodology**: RDAP provides a standardized JSON response directly from the domain registrars. We parse this standard format to find the authoritative "registration expiration" date.
+
+### 2. SSL/TLS Certificate Health
+We use a robust multi-source approach to ensure we find the correct certificate details:
+*   **Primary Source**: We first query the **NetworkCalc API** (`networkcalc.com`), a specialized tool for network and security calculations.
+*   **Fallback Source**: If the primary source is unavailable, we query **crt.sh** (Certificate Transparency Search). This taps into the global distributed log of public certificates to find the latest valid certificate for the domain.
+*   **Validation**: We verify Subject Alternative Names (SANs) and Wildcards to ensure the certificate actually applies to the domain you are visiting.
 
 ## 🛡️ Privacy Policy
 
 This extension respects your privacy:
 *   **No Data Collection**: We do not store, track, or sell your data.
 *   **No Accounts**: No sign-up required.
-*   **Direct Connections**: Requests are made directly from your browser to `rdap.org` (domain lookup) and `networkcalc.com` (SSL lookup).
+*   **Direct Connections**: Requests are made directly from your browser to `rdap.org` (domain), `networkcalc.com` (SSL), and `crt.sh` (SSL Fallback).
 
 ---
 
